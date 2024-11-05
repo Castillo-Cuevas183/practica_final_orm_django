@@ -1,0 +1,11 @@
+{% extends 'laboratorio/base.html' %}
+
+{% block content %}
+  <h2>Actualizar Laboratorio: {{ laboratorio.nombre }}</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+  <a href="{% url 'listar_laboratorios' %}">Ir a la información de los laboratorios</a>
+{% endblock %}

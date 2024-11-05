@@ -1,0 +1,35 @@
+{% extends 'laboratorio/base.html' %}
+
+
+{% block content %}
+  <h2>Infromación de Laboratorios</h2>
+  <table class="table table-dark table-striped" >
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Ciudad</th>
+        <th>País</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for laboratorio in laboratorios %}
+        <tr>
+          <td>{{ laboratorio.nombre }}</td>
+          <td>{{ laboratorio.ciudad }}</td>
+          <td>{{ laboratorio.pais }}</td>
+          <td> <a href="{% url 'editar_laboratorio' laboratorio.id %}" class="btn btn-warning">Actualizar</a> </td>
+          <td>  <a href="{% url 'eliminar_laboratorio' laboratorio.id %}" class="btn btn-danger">Eliminar</a> </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'crear_laboratorio' %}" class="btn btn-primary">Crear Nuevo Laboratorio</a> <br> <br>
+
+
+  <h6>¿Información de Laboratorios?</h6> <br>
+
+  <a class="nav-link" href="{% url 'pagina_principal' %}"> Ir a la página de Inicio</a>
+{% endblock %}
+

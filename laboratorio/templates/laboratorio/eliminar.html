@@ -1,0 +1,13 @@
+{% extends 'laboratorio/base.html' %}
+
+{% block content %}
+  <h2>Eliminar Laboratorio</h2>
+  <h4>¿Estás seguro de que deseas eliminar el laboratorio "{{ laboratorio.nombre }}"?</h4>
+  <form method="post">
+    {% csrf_token %}
+ 
+    <a href="{% url 'listar_laboratorios' %}" >Retornar</a>
+  </form><br> <br>
+  <button type="submit" class="btn btn-danger">Confimar</button>
+{% endblock %}
+

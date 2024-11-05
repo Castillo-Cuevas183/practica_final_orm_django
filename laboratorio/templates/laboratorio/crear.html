@@ -1,0 +1,15 @@
+{% extends 'laboratorio/base.html' %}
+
+{% block content %}
+  <h2>Crear Laboratorio</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form> <br> <br>
+
+  <h6>¿Información de Laboratorios?</h6> <br>
+
+  <a href="{% url 'listar_laboratorios' %}">Ir a la información de los laboratorios</a>
+{% endblock %}
+
